@@ -78,8 +78,56 @@ header {
         flex-wrap: wrap;
 
         .ctx {
+            max-width: 778px;
+
             &-title {
-                        
+                font-family: "Oswald";
+                font-size: calc($screen-fontSize - 52pt);
+                color: #fff;
+            }
+
+            &-text {
+                margin: 40px 0;
+                max-width: 546px;
+
+                font-family: "Open Sans";
+                font-size: calc($screen-fontSize - 84pt);
+                color: #fff;
+            }
+
+            &-btn {
+                padding: 15px 40px;
+
+                border: 1px solid #fff;
+                background: none;
+                cursor: pointer;
+
+                font-family: "Open Sans";
+                font-size: calc($screen-fontSize - 84pt);
+                color: #fff;
+
+                position: relative;
+                z-index: 2;
+
+                ::after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 0;
+                    height: 100%;
+                    background: #0077ffc4;
+                    transition: all .35s;
+                    z-index: -2;
+                }
+
+                :hover {
+                    color: #fff;
+                }
+
+                :hover::after {
+                    width: 100%;
+                }
             }
         }
     }

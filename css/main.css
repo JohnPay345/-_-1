@@ -76,3 +76,47 @@ header .header-screen-content {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
+header .header-screen-content .ctx {
+  max-width: 778px;
+}
+header .header-screen-content .ctx-title {
+  font-family: "Oswald";
+  font-size: 48pt;
+  color: #fff;
+}
+header .header-screen-content .ctx-text {
+  margin: 40px 0;
+  max-width: 546px;
+  font-family: "Open Sans";
+  font-size: 16pt;
+  color: #fff;
+}
+header .header-screen-content .ctx-btn {
+  padding: 15px 40px;
+  border: 1px solid #fff;
+  background: none;
+  cursor: pointer;
+  font-family: "Open Sans";
+  font-size: 16pt;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+}
+header .header-screen-content .ctx-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: rgba(0, 119, 255, 0.768627451);
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+  z-index: -2;
+}
+header .header-screen-content .ctx-btn:hover {
+  color: #fff;
+}
+header .header-screen-content .ctx-btn:hover::after {
+  width: 100%;
+}
