@@ -9,10 +9,9 @@ $sreen-height: 100vh;
 $screen-fontSize: 100pt;
 
 header {
-    width: 100vw;
     height: 100vh;
 
-    background-image: url(../images/headerBack.jpeg);
+    background-image: url(../images/Header/headerBack.jpeg);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -70,6 +69,7 @@ header {
     }
 
     .header-screen-content {
+        position: relative;
         height: calc($sreen-height - 10vh);
 
         display: flex;
@@ -104,6 +104,7 @@ header {
 
                 font-family: "Open Sans";
                 font-size: calc($screen-fontSize - 84pt);
+                text-transform: uppercase;
                 color: #fff;
 
                 position: relative;
@@ -128,6 +129,52 @@ header {
                 :hover::after {
                     width: 100%;
                 }
+            }
+        }
+    }
+}
+
+.main-block {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 150px;
+
+    .slider {
+        &-top {
+            display: flex;
+            justify-content: space-between;
+
+            &-title {
+                h2 {
+                    display: inline;
+                    margin-left: 40px;
+
+                    font-family: "Oswald";
+                    font-size: 30px;
+                    font-weight: 400;
+                    line-height: 44.46px;
+                    letter-spacing: 0.05em;
+                    color: #343434;
+                }
+            }
+
+            &-btn {
+                cursor: pointer;
+                transition: all .5s;
+
+                :hover {
+                    background-color: #0077ffc4;
+                    transition: all .35s;
+                }
+            }
+        }
+
+        &-wrap {
+            margin-top: 70px;
+
+            &-ctx:not(:last-child) {
+                margin-right: 30px;
             }
         }
     }

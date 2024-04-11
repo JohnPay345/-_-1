@@ -6,9 +6,8 @@
 }
 
 header {
-  width: 100vw;
   height: 100vh;
-  background-image: url(../images/headerBack.jpeg);
+  background-image: url(../images/Header/headerBack.jpeg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -63,6 +62,7 @@ header .header-logo-menu .menu ul li a {
   color: #fff;
 }
 header .header-screen-content {
+  position: relative;
   height: 90vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -98,11 +98,12 @@ header .header-screen-content .ctx-btn {
   cursor: pointer;
   font-family: "Open Sans";
   font-size: 16pt;
+  text-transform: uppercase;
   color: #fff;
   position: relative;
   z-index: 2;
 }
-header .header-screen-content .ctx-btn::after {
+header .header-screen-content .ctx-btn ::after {
   content: "";
   position: absolute;
   top: 0;
@@ -114,9 +115,53 @@ header .header-screen-content .ctx-btn::after {
   transition: all 0.35s;
   z-index: -2;
 }
-header .header-screen-content .ctx-btn:hover {
+header .header-screen-content .ctx-btn :hover {
   color: #fff;
 }
-header .header-screen-content .ctx-btn:hover::after {
+header .header-screen-content .ctx-btn :hover::after {
   width: 100%;
+}
+
+.main-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 150px;
+}
+.main-block .slider-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.main-block .slider-top-title h2 {
+  display: inline;
+  margin-left: 40px;
+  font-family: "Oswald";
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 44.46px;
+  letter-spacing: 0.05em;
+  color: #343434;
+}
+.main-block .slider-top-btn {
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.main-block .slider-top-btn :hover {
+  background-color: rgba(0, 119, 255, 0.768627451);
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+.main-block .slider-wrap {
+  margin-top: 70px;
+}
+.main-block .slider-wrap-ctx:not(:last-child) {
+  margin-right: 30px;
 }
