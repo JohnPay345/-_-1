@@ -8,6 +8,17 @@ $sreen-width: 100vw;
 $sreen-height: 100vh;
 $screen-fontSize: 100pt;
 
+%h2 {
+    display: inline;
+    margin-left: 40px;                
+    font-family: "Oswald";
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 44.46px;
+    letter-spacing: 0.05em;
+    color: #343434;
+}
+
 header {
     height: 100vh;
 
@@ -135,47 +146,98 @@ header {
 }
 
 .main-block {
-    display: flex;
-    justify-content: center;
-
     margin-top: 150px;
 
-    .slider {
-        &-top {
-            display: flex;
-            justify-content: space-between;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-wrap {
+        .slider {
+            &-top {
+                display: flex;
+                justify-content: space-between;
 
-            &-title {
-                h2 {
-                    display: inline;
-                    margin-left: 40px;
+                &-title {
+                    h2 {
+                        @extend %h2;
+                    }
+                }
 
-                    font-family: "Oswald";
-                    font-size: 30px;
-                    font-weight: 400;
-                    line-height: 44.46px;
-                    letter-spacing: 0.05em;
-                    color: #343434;
+                &-btn {
+                    cursor: pointer;
+                    transition: all .5s;
+
+                    :hover {
+                        background-color: #0077ffc4;
+                        transition: all .35s;
+                    }
                 }
             }
 
-            &-btn {
-                cursor: pointer;
-                transition: all .5s;
+            &-wrap {
+                margin-top: 70px;
 
-                :hover {
-                    background-color: #0077ffc4;
-                    transition: all .35s;
+                &-ctx:not(:last-child) {
+                    margin-right: 30px;
                 }
             }
         }
 
-        &-wrap {
-            margin-top: 70px;
+        .category-items {
+            margin-top: 150px;
 
-            &-ctx:not(:last-child) {
-                margin-right: 30px;
+            &-top {
+                &-title {
+                    h2 {
+                        @extend %h2;
+                    }
+                }
+
+                &-btn {
+                    display: flex;
+                    justify-content: center;
+                    margin: 70px 0 50px;
+
+                    &-num {
+                        @extend %h2;
+                        position: relative;
+                        font-size: 24px;
+                        line-height: 35.57px;
+                        letter-spacing: 0.05em;
+                        cursor: pointer;
+                    }
+
+                    &-num:not(:last-child) {
+                        margin-right: 47px;
+                    }
+
+                    &-active {
+                        color: #005BC1;
+                    }
+
+                    &-active::after {
+                        content: "";
+                        position: absolute;
+                        top: 35px;
+                        left: 0px;
+                        color: #005BC1;
+                        width: 100%;
+                        border: 2px solid #005BC1
+                    }
+                }
+            }
+
+            &-arr {
+                &-ctx {
+                    cursor: pointer;
+                }
+
+                &-ctx:not(:last-child) {
+                    margin-right: 30px;
+                }
             }
         }
+
+
     }
 }
