@@ -121,7 +121,7 @@ header {
                 position: relative;
                 z-index: 2;
 
-                ::after {
+                &::after {
                     content: "";
                     position: absolute;
                     top: 0;
@@ -133,11 +133,11 @@ header {
                     z-index: -2;
                 }
 
-                :hover {
+                &:hover {
                     color: #fff;
                 }
 
-                :hover::after {
+                &:hover::after {
                     width: 100%;
                 }
             }
@@ -154,6 +154,7 @@ header {
     &-wrap {
         .slider {
             &-top {
+                max-width: 1100px;
                 display: flex;
                 justify-content: space-between;
 
@@ -351,6 +352,175 @@ header {
                         }
                     }
                 }
+            }
+        }
+
+        .news {
+            margin-top: 150px;
+
+            .news-top {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 77px;
+
+                .news-top-title {
+                    h2 {
+                        @extend %h2;
+                    }
+                }
+
+                button {
+                    padding: 15px 34px;
+                    cursor: pointer;
+                    font-family: "Open Sans";
+                    font-size: 16px;
+                    line-height: 21.79px;
+                    letter-spacing: 0.05em;
+                    color: #fff;
+                    background-color: #005BC1;
+                    border: 1px solid #005BC1;
+                }
+            }
+
+            .news-ctx {
+                display: flex;
+
+                .news-ctx-main {
+                    display: flex;
+                    margin-right: 60px;
+
+                    .news-ctx-main-info {
+                        max-width: 264px;
+                        margin-left: 30px;
+
+                        .news-ctx-main-info-top {
+                            display: flex;
+                            justify-content: space-between;
+
+                            h4 {
+                                font-family: "Oswald";
+                                font-size: 18px;
+                                font-weight: 400;
+                                line-height: 26.68px;
+                                letter-spacing: 0.05em;
+                                color: #343434;
+                            }
+
+                            p {
+                                font-family: "Open Sans";
+                                font-size: 14px;
+                                line-height: 19.07px;
+                                color: #979797;
+                            }
+                        }
+
+                        .news-ctx-main-info-text {
+                            margin-top: 42px;
+
+                            font-family: "Open Sans";
+                            font-size: 14px;
+                            font-weight: 400;
+                            line-height: 19.07px;
+                            color: #343434;
+                        }
+
+                        a {
+                            display: block;
+                            margin-top: 21px;
+
+                            font-family: "Open Sans";
+                            font-size: 14px;
+                            line-height: 19.07px;
+                            color: #343434;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+
+                .news-ctx-secondary-1 {
+                    max-width: 233px;
+                    margin-right: 60px;
+
+                    .news-ctx-secondary-1-title {
+                        font-family: "Oswald";
+                        font-size: 18px;
+                        font-weight: 400;
+                        line-height: 26.68px;
+                        letter-spacing: 0.05em;
+                        color: #343434;
+                    }
+
+                    .news-ctx-secondary-1-info {
+                        margin-top: 20px;
+
+                        font-family: "Open Sans";
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: 19.07px;
+                        color: #343434;
+                    }
+
+                    .news-ctx-secondary-1-imgData {
+                        margin-top: 20px;
+
+                        display: flex;
+                        justify-content: space-between;
+                        flex-wrap: wrap;
+                        align-items: flex-end;
+
+                        p {
+                            font-family: "Open Sans";
+                            font-size: 14px;
+                            font-weight: 400;
+                            line-height: 19.07px;
+                            color: #979797;
+                        }
+                    }
+                }                         
+                
+
+                .news-ctx-secondary-2 {
+                    max-width: 233px;
+                    margin-right: 60px;
+
+                    .news-ctx-secondary-2-title {
+                        width: 0;
+
+                        font-family: "Oswald";
+                        font-size: 18px;
+                        font-weight: 400;
+                        line-height: 26.68px;
+                        letter-spacing: 0.05em;
+                        color: #343434;
+                    }
+
+                    .news-ctx-secondary-2-info {
+                        margin-top: 15px;
+
+                        font-family: "Open Sans";
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: 19.07px;
+                        color: #343434;
+                    }
+
+                    .news-ctx-secondary-2-imgData {
+                        margin-top: 20px;
+
+                        display: flex;
+                        justify-content: space-between;
+                        flex-wrap: wrap;
+                        align-items: flex-end;
+
+                        p {
+                            font-family: "Open Sans";
+                            font-size: 14px;
+                            font-weight: 400;
+                            line-height: 19.07px;
+                            color: #979797;
+                        }
+                    }
+                }                    
             }
         }
     }
