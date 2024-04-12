@@ -474,3 +474,82 @@ header .header-screen-content .ctx-btn:hover::after {
   line-height: 19.07px;
   color: #979797;
 }
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 30px 0;
+  margin-top: 120px;
+  background-color: #005BC1;
+}
+footer .footer-wrap {
+  width: 1194px;
+  color: #fff;
+}
+footer .footer-wrap hr {
+  width: 100%;
+  margin: 25px 0;
+}
+footer .footer-wrap-contacts-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #fff;
+}
+footer .footer-wrap-contacts-info h4 {
+  font-family: "Oswald";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26.68px;
+  letter-spacing: 0.05em;
+}
+footer .footer-wrap-contacts-info p {
+  font-family: "Open Sans";
+  font-size: 14px;
+  line-height: 19.07px;
+}
+footer .footer-wrap-contacts-info a {
+  text-decoration: none;
+  color: #fff;
+}
+footer .footer-wrap-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+footer .footer-wrap-list ul {
+  list-style: none;
+}
+footer .footer-wrap-list ul li {
+  cursor: pointer;
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: lighter;
+  line-height: 19.07px;
+}
+footer .footer-wrap-list ul li:not(:last-child) {
+  margin: 0 110px 10px 0;
+}
+footer .footer-wrap-company-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+footer .footer-wrap-company-info p {
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: lighter;
+  line-height: 19.07px;
+}
