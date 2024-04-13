@@ -16,6 +16,10 @@
   color: #343434;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 header {
   height: 100vh;
   background-image: url(../images/Header/headerBack.jpeg);
@@ -110,6 +114,7 @@ header .header-screen-content .ctx-btn {
   font-family: "Open Sans";
   font-size: 16pt;
   text-transform: uppercase;
+  text-decoration: none;
   color: #fff;
   position: relative;
   z-index: 2;

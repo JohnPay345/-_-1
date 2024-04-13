@@ -19,6 +19,10 @@ $screen-fontSize: 100pt;
     color: #343434;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 header {
     height: 100vh;
 
@@ -116,6 +120,7 @@ header {
                 font-family: "Open Sans";
                 font-size: calc($screen-fontSize - 84pt);
                 text-transform: uppercase;
+                text-decoration: none;
                 color: #fff;
 
                 position: relative;
