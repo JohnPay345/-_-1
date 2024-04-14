@@ -20,6 +20,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  position: relative;
+}
+
 header {
   height: 100vh;
   background-image: url(../images/Header/headerBack.jpeg);
@@ -136,6 +140,107 @@ header .header-screen-content .ctx-btn:hover {
 }
 header .header-screen-content .ctx-btn:hover::after {
   width: 100%;
+}
+
+.buy-equipment {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 2;
+}
+.buy-equipment-wrap {
+  width: 1754px;
+  background-color: rgba(0, 90, 193, 0.7450980392);
+  position: relative;
+  display: none;
+}
+.buy-equipment-wrap-btnClose {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+.buy-equipment-wrap-title {
+  padding-top: 30px;
+  font-family: "Oswald";
+  font-size: 64px;
+  font-weight: bolder;
+  letter-spacing: 0.05em;
+  text-align: center;
+  color: #CCCCCC;
+}
+.buy-equipment-wrap-decor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 189px 0 53px;
+}
+.buy-equipment-wrap-decor img {
+  width: 348px;
+  height: 322px;
+  border: 1px solid #979797;
+  margin-right: 120px;
+}
+.buy-equipment-wrap-decor-form input {
+  display: block;
+  width: 473px;
+  height: 44px;
+  padding-left: 12px;
+  margin-bottom: 50px;
+  outline: none;
+  font-family: "Oswald";
+  font-weight: bolder;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  border: none;
+  color: #c4c4c4;
+}
+.buy-equipment-wrap-decor-form-dataProcecing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.buy-equipment-wrap-decor-form-dataProcecing input {
+  display: initial;
+  outline: none;
+  width: 28px;
+  height: 28px;
+}
+.buy-equipment-wrap-decor-form-dataProcecing span {
+  margin-left: 11px;
+  font-family: "Oswald";
+  font-weight: bolder;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  line-height: 23px;
+  color: #c4c4c4;
+}
+.buy-equipment-wrap-decor-form-dataProcecing span a {
+  text-decoration: underline;
+  color: #c4c4c4;
+}
+.buy-equipment-wrap-decor-form button {
+  display: block;
+  padding: 11px 13px;
+  font-family: "Open Sans";
+  font-weight: bolder;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  border: none;
+  color: #c4c4c4;
+  background-color: #fff;
+}
+.buy-equipment-wrap-decor-form button:disabled {
+  background-color: rgba(103, 103, 103, 0.3607843137);
+}
+.buy-equipment-wrap.open {
+  display: block;
 }
 
 .main-block {
