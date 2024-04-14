@@ -199,7 +199,7 @@ header .header-screen-content .ctx-btn:hover::after {
   font-size: 16px;
   letter-spacing: 0.05em;
   border: none;
-  color: #c4c4c4;
+  color: #272727;
 }
 .buy-equipment-wrap-decor-form-dataProcecing {
   display: -webkit-box;
@@ -207,7 +207,6 @@ header .header-screen-content .ctx-btn:hover::after {
   display: flex;
 }
 .buy-equipment-wrap-decor-form-dataProcecing input {
-  display: initial;
   outline: none;
   width: 28px;
   height: 28px;
