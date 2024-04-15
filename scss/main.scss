@@ -166,7 +166,7 @@ header {
         width: 1754px;
         background-color: #005ac1be;
         position: relative;
-        display: none;
+        //display: none;
 
         &-btnClose {
             position: absolute;
@@ -213,6 +213,15 @@ header {
                         letter-spacing: 0.05em;
                         border: none;
                         color: #272727;
+                    }
+
+                    small {
+                        font-family: "Oswald";
+                        font-weight: bolder;
+                        font-size: 16px;
+                        letter-spacing: 0.05em;
+                        border: none;
+                        color: #f20b0b;
                     }
         
                     &-dataProcecing {

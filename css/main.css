@@ -155,7 +155,6 @@ header .header-screen-content .ctx-btn:hover::after {
   width: 1754px;
   background-color: rgba(0, 90, 193, 0.7450980392);
   position: relative;
-  display: none;
 }
 .buy-equipment-wrap-btnClose {
   position: absolute;
@@ -200,6 +199,14 @@ header .header-screen-content .ctx-btn:hover::after {
   letter-spacing: 0.05em;
   border: none;
   color: #272727;
+}
+.buy-equipment-wrap-decor-form small {
+  font-family: "Oswald";
+  font-weight: bolder;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  border: none;
+  color: #f20b0b;
 }
 .buy-equipment-wrap-decor-form-dataProcecing {
   display: -webkit-box;

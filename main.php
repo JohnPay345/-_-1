@@ -1,14 +1,7 @@
 <?php
-
-require_once __DIR__ . '/incs/data.php';
-require_once __DIR__ . '/incs/functions.php';
-
-if(!empty($_POST)) {
-    $fields = load($fields);
-}
-
+    require_once __DIR__ . "/incs/helpers.php";
+//$_SESSION['validation'] = [];
 ?>
-
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -63,14 +56,30 @@ if(!empty($_POST)) {
             </div>
             <div class="buy-equipment-wrap-decor">
                 <img src="images/Category-Item/catelog-item-1.png" alt="Картинка заказа">
-                <form method="POST" class="buy-equipment-wrap-decor-form">
-                    <input type="text" placeholder="Фамилия" name="FirstName" required>
-                    <input type="text" placeholder="Имя" name="SecondName" required>
-                    <input type="text" placeholder="Отчество" name="ThirdName" required>
-                    <input type="tel" placeholder="Номер телефона" name="Telephones" required>
-                    <input type="email" placeholder="Email" name="Email" required>
+                <form method="POST" action="incs/formProcecing.php" class="buy-equipment-wrap-decor-form">
+                    <?php if(hasValidationError('FirstName')):?>
+                    <small><?php getErrorMessage('FirstName')?></small>
+                    <?php endif; ?>
+                    <input type="text" placeholder="Фамилия" name="FirstName">
+                    <?php if(hasValidationError('SecondName')):?>
+                    <small><?php getErrorMessage('SecondName') ?></small>
+                    <?php endif; ?>
+                    <input type="text" placeholder="Имя" name="SecondName">
+                    <?php if(hasValidationError('ThirdName')):?>
+                    <small><?php getErrorMessage('ThirdName')?></small>
+                    <?php endif; ?>
+                    <input type="text" placeholder="Отчество" name="ThirdName">
+                    <?php if(hasValidationError('Telephones')):?>
+                    <small><?php getErrorMessage('Telephones')?></small>
+                    <?php endif; ?>
+                    <input type="tel" placeholder="Номер телефона" name="Telephones">
+                    <?php if(hasValidationError('Email')):?>
+                    <small><?php getErrorMessage('Email')?></small>
+                    <?php endif; ?>
+                    <input type="email" placeholder="Email" name="Email">
                     <div class="buy-equipment-wrap-decor-form-dataProcecing">
-                        <input type="checkbox"><span>Я согласен на <a href="#">обработку персональных данных</a></span>
+                        <input type="checkbox"><span>Я согласен на <a href="#">обработку персональных
+                                данных</a></span>
                     </div>
                     <button type="submit" disabled>Готово</button>
                 </form>
@@ -190,7 +199,8 @@ if(!empty($_POST)) {
                     </div>
                     <div class="news-ctx-secondary-2">
                         <h4 class="news-ctx-secondary-2-title">СЕМИНАР ROBE</h4>
-                        <p class="news-ctx-secondary-2-info">30 января 2017 года наши сотрудники побывали в Берлине..
+                        <p class="news-ctx-secondary-2-info">30 января 2017 года наши сотрудники побывали в
+                            Берлине..
                         </p>
                         <div class="news-ctx-secondary-2-imgData">
                             <img src="images/News-Ctx/Secondary(2).png" alt="Второстепенная картинка-1">
