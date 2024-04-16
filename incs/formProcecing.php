@@ -3,11 +3,17 @@
 require_once __DIR__ . "/helpers.php";
 
 //Получение данных из формы
-$firstName = $_POST["FirstName"];
-$secondName = $_POST["SecondName"];
-$thirdName = $_POST["ThirdName"];
-$telephones = $_POST["Telephones"];
-$email = $_POST["Email"];
+$firstName = $_POST["FirstName"] ?? null;
+$secondName = $_POST["SecondName"] ?? null;
+$thirdName = $_POST["ThirdName"] ?? null;
+$telephones = $_POST["Telephones"] ?? null;
+$email = $_POST["Email"] ?? null;
+$infoOrder = $_POST["infoOrder"] ?? null;
+
+loadOldValue('FirstName', $_POST["FirstName"]);
+loadOldValue('SecondName', $_POST["SecondName"]);
+loadOldValue('ThirdName', $_POST["ThirdName"]);
+loadOldValue('Telephones', $_POST["Telephones"]);
 
 //Валидация данных на стороне сервера
 $_SESSION['validation'] = [];
@@ -28,10 +34,13 @@ if (empty($telephones)) {
     $_SESSION['validation']['Telephones'] = 'Неккоректный телефон';  
 }
 
-if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    loadOldValue('Email', $email);
     $_SESSION['validation']['Email'] = 'Неккоректный email';
 }
 
 if(!empty($_SESSION['validation'])) {
     redirect('/main.php');
 }
+
+//Получение атрибута alt у img

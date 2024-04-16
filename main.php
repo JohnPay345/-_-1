@@ -55,34 +55,48 @@
                 <h3>Заказ оборудования</h3>
             </div>
             <div class="buy-equipment-wrap-decor">
-                <img src="images/Category-Item/catelog-item-1.png" alt="Картинка заказа">
-                <form method="POST" action="incs/formProcecing.php" class="buy-equipment-wrap-decor-form">
-                    <?php if(hasValidationError('FirstName')):?>
-                    <small><?php getErrorMessage('FirstName')?></small>
-                    <?php endif; ?>
-                    <input type="text" placeholder="Фамилия" name="FirstName">
-                    <?php if(hasValidationError('SecondName')):?>
-                    <small><?php getErrorMessage('SecondName') ?></small>
-                    <?php endif; ?>
-                    <input type="text" placeholder="Имя" name="SecondName">
-                    <?php if(hasValidationError('ThirdName')):?>
-                    <small><?php getErrorMessage('ThirdName')?></small>
-                    <?php endif; ?>
-                    <input type="text" placeholder="Отчество" name="ThirdName">
-                    <?php if(hasValidationError('Telephones')):?>
-                    <small><?php getErrorMessage('Telephones')?></small>
-                    <?php endif; ?>
-                    <input type="tel" placeholder="Номер телефона" name="Telephones">
-                    <?php if(hasValidationError('Email')):?>
-                    <small><?php getErrorMessage('Email')?></small>
-                    <?php endif; ?>
-                    <input type="email" placeholder="Email" name="Email">
-                    <div class="buy-equipment-wrap-decor-form-dataProcecing">
-                        <input type="checkbox"><span>Я согласен на <a href="#">обработку персональных
-                                данных</a></span>
+                <form method="POST" action="incs/ajaxProcecing.php" class="buy-equipment-wrap-decor-form">
+                    <div class="buy-equipment-wrap-decor-form-img">
+                        <img src="images/Category-Item/catelog-item-1.png" alt="Картинка заказа">
                     </div>
-                    <button type="submit" disabled>Готово</button>
+                    <div class="buy-equipment-wrap-decor-form-input">
+                        <?php if(hasValidationError('FirstName')):?>
+                        <small><?php getErrorMessage('FirstName')?></small>
+                        <?php endif; ?>
+                        <input type="text" placeholder="Фамилия" name="FirstName" value=<?php echo old('FirstName') ?>>
+                        <?php if(hasValidationError('SecondName')):?>
+                        <small><?php getErrorMessage('SecondName') ?></small>
+                        <?php endif; ?>
+                        <input type="text" placeholder="Имя" name="SecondName" value=<?php echo old('SecondName') ?>>
+                        <?php if(hasValidationError('ThirdName')):?>
+                        <small><?php getErrorMessage('ThirdName')?></small>
+                        <?php endif; ?>
+                        <input type="text" placeholder="Отчество" name="ThirdName" value=<?php echo old('ThirdName') ?>>
+                        <?php if(hasValidationError('Telephones')):?>
+                        <small><?php getErrorMessage('Telephones')?></small>
+                        <?php endif; ?>
+                        <input type="tel" placeholder="Номер телефона" name="Telephones"
+                            value=<?php echo old('Telephones') ?>>
+                        <?php if(hasValidationError('Email')):?>
+                        <small><?php getErrorMessage('Email')?></small>
+                        <?php endif; ?>
+                        <input type="email" placeholder="Email" name="Email" value=<?php echo old('Email') ?>>
+                        <div class="buy-equipment-wrap-decor-form-input-list">
+                            <input list="orders" name="infoOrder" placeholder="Выберите товар" required>
+                            <datalist id="orders">
+                                <option value="Статичные светодиодные приборы">Статичные светодиодные приборы</option>
+                                <option value="Контроллеры">Контроллеры</option>
+                                <option value="Акссесуары">Акссесуары</option>
+                            </datalist>
+                        </div>
+                        <div class="buy-equipment-wrap-decor-form-dataProcecing">
+                            <input type="checkbox"><span>Я согласен на <a href="#">обработку персональных
+                                    данных</a></span>
+                        </div>
+                        <button type="submit" disabled>Готово</button>
+                    </div>
                 </form>
+                <?php clearValidation() ?>
             </div>
         </div>
     </section>
@@ -242,6 +256,7 @@
         </div>
     </footer>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script defer src="js/main.js"></script>
 </body>
 

@@ -166,7 +166,7 @@ header {
         width: 1754px;
         background-color: #005ac1be;
         position: relative;
-        //display: none;
+        display: none;
 
         &-btnClose {
             position: absolute;
@@ -187,8 +187,6 @@ header {
         }
         
         &-decor {
-                display: flex;
-                justify-content: center;
                 padding: 189px 0 53px;
                 
                 img {
@@ -199,6 +197,9 @@ header {
                 }
         
                 &-form {
+                    display: flex;
+                    justify-content: center;
+
                     input {
                         display: block;
                         width: 473px;
@@ -214,6 +215,39 @@ header {
                         border: none;
                         color: #272727;
                     }
+
+                    &-input {
+                        &-list {
+                            position: relative;
+
+                            datalist {
+                                position: absolute;
+                                top: 44px;
+                                right: -1;
+                                background-color: white;
+                                border: 1px solid blue;
+                                border-radius: 0 0 5px 5px;
+                                border-top: none;
+                                font-family: "Oswald";
+                                width: 100%;
+                                padding: 5px;
+                            }
+
+                            option {
+                                background-color: white;
+                                padding: 4px;
+                                color: #272727;
+                                margin-bottom: 1px;
+                                font-size: 18px;
+                                cursor: pointer;
+
+                                &:hover, .active {
+                                    background-color: lightblue;
+                                }
+                            }
+                        }
+                    }
+
 
                     small {
                         font-family: "Oswald";

@@ -4,6 +4,10 @@ let buyEquipmentEntryWrap = document.querySelector(".buy-equipment-wrap");
 let buyEquipmentWrapDecorImg = document.querySelector(".buy-equipment-wrap-decor img");
 let buyEquipmentBtnClose = document.querySelector(".buy-equipment-wrap-btnClose");
 
+let inputText = document.querySelector('buy-equipment-entry-wrap-decor-form-dataProcecing, input[name="infoOrder"]');
+let ordersList = document.getElementById('orders');
+let optionsList = document.querySelectorAll('datalist option');
+
 let inputCheckbox = document.querySelector('buy-equipment-entry-wrap-decor-form-dataProcecing, input[type="checkbox"]');
 let button = document.querySelector('buy-equipment-entry-wrap-decor-form, button');
 
@@ -18,10 +22,16 @@ inputCheckbox.addEventListener('change', function (event) {
 
 //Открытие окна при нажатии по одной из продукции
 categoryItemsArr.addEventListener('click', function (event) {
+    if (event.target.src === undefined) {
+        return true;
+    }
     buyEquipmentEntryWrap.classList.add('open');
     document.body.style.overflow = "hidden";
     buyEquipmentWrapDecorImg.src = event.target.src;
+    inputText.textContent = event.target.alt;
+    console.log(inputText);
 });
+
 
 //Закрытие окна по кнопке Esc
 window.addEventListener('keydown', (e) => {
@@ -36,8 +46,41 @@ buyEquipmentBtnClose.addEventListener('click', function () {
     document.body.style.overflow = "auto";
 });
 
+//Изменение картинки в зависимости от list
+inputText.addEventListener('focus', function () {
+    ordersList.style.display = "block";
+    
+    document.body.addEventListener('click', function (event) {
+        if (event.target != inputText) {
+            ordersList.style.display = "none";
+        }
+    });
+});
+
+inputText.addEventListener('keydown', function (event) {
+    if (event.key === "Escape") {
+        ordersList.style.display = "none";
+    }
+});
 
 
+Array.from(ordersList.options).forEach(elem => {
+    elem.addEventListener('click', () => {
+        console.log('Hello');
+        inputText.value = elem.value;
+    });
+});
 
-
-
+//Работа с ajax и отправка данных (Jquery)
+/*$('.buy-equipment-wrap-decor-form').submit(function () {
+    $.ajax({
+        url: 'incs/ajaxProcecing.php',
+        type: "post",
+        method: 'POST',
+        data: { 'infoOrder': inputText },
+        success: function () {
+            alert("Всё прошло удачно")
+        },
+        datatype: "String"
+    });
+});*/

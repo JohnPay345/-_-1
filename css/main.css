@@ -155,6 +155,7 @@ header .header-screen-content .ctx-btn:hover::after {
   width: 1754px;
   background-color: rgba(0, 90, 193, 0.7450980392);
   position: relative;
+  display: none;
 }
 .buy-equipment-wrap-btnClose {
   position: absolute;
@@ -172,12 +173,6 @@ header .header-screen-content .ctx-btn:hover::after {
   color: #CCCCCC;
 }
 .buy-equipment-wrap-decor {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   padding: 189px 0 53px;
 }
 .buy-equipment-wrap-decor img {
@@ -185,6 +180,14 @@ header .header-screen-content .ctx-btn:hover::after {
   height: 322px;
   border: 1px solid #979797;
   margin-right: 120px;
+}
+.buy-equipment-wrap-decor-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .buy-equipment-wrap-decor-form input {
   display: block;
@@ -199,6 +202,32 @@ header .header-screen-content .ctx-btn:hover::after {
   letter-spacing: 0.05em;
   border: none;
   color: #272727;
+}
+.buy-equipment-wrap-decor-form-input-list {
+  position: relative;
+}
+.buy-equipment-wrap-decor-form-input-list datalist {
+  position: absolute;
+  top: 44px;
+  right: -1;
+  background-color: white;
+  border: 1px solid blue;
+  border-radius: 0 0 5px 5px;
+  border-top: none;
+  font-family: "Oswald";
+  width: 100%;
+  padding: 5px;
+}
+.buy-equipment-wrap-decor-form-input-list option {
+  background-color: white;
+  padding: 4px;
+  color: #272727;
+  margin-bottom: 1px;
+  font-size: 18px;
+  cursor: pointer;
+}
+.buy-equipment-wrap-decor-form-input-list option:hover, .buy-equipment-wrap-decor-form-input-list option .active {
+  background-color: lightblue;
 }
 .buy-equipment-wrap-decor-form small {
   font-family: "Oswald";
