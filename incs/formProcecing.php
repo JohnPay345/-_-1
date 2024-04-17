@@ -12,6 +12,8 @@ $telephones = $_POST["Telephones"] ?? null;
 $email = $_POST["Email"] ?? null;
 $infoOrder = $_POST["infoOrder"] ?? null;
 
+$permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
 loadOldValue('FirstName', $_POST["FirstName"]);
 loadOldValue('SecondName', $_POST["SecondName"]);
 loadOldValue('ThirdName', $_POST["ThirdName"]);
@@ -45,9 +47,14 @@ if(!empty($_SESSION['validation'])) {
     redirect('/main.php');
 }
 
+//Данные для таблицы orders DB ordersprocecing
+$dataOrder = date('d.m.Y');
+$numOrder = generate_string($permitted_chars);
+
 //Работа с DB orderprocecing
-$mysql = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
+$mysql = new mysqli('localhost', 'root', '', 'ordersprocecing');
 mysqli_report(MYSQLI_REPORT_ERROR || MYSQLI_REPORT_STRICT);
 $mysql->query("INSERT INTO `users` (`Фамилия`, `Имя`, `Отчество`, `Номер телефона`, `Email`) VALUES('$firstName', '$secondName', '$thirdName', '$telephones', '$email')");
+$mysql->query("INSERT INTO `orders` (`Дата`, `Номер заказа`, `Название товара`) VALUES('$dataOrder', '$numOrder', '$infoOrder')");
 $mysql->close();
-redirect('/main.php');
+//redirect('/main.php');
