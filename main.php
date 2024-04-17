@@ -1,6 +1,5 @@
 <?php
     require_once __DIR__ . "/incs/helpers.php";
-//$_SESSION['validation'] = [];
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -55,7 +54,7 @@
                 <h3>Заказ оборудования</h3>
             </div>
             <div class="buy-equipment-wrap-decor">
-                <form method="POST" action="incs/ajaxProcecing.php" class="buy-equipment-wrap-decor-form">
+                <form method="POST" action="incs/formProcecing.php" class="buy-equipment-wrap-decor-form">
                     <div class="buy-equipment-wrap-decor-form-img">
                         <img src="images/Category-Item/catelog-item-1.png" alt="Картинка заказа">
                     </div>
@@ -63,24 +62,27 @@
                         <?php if(hasValidationError('FirstName')):?>
                         <small><?php getErrorMessage('FirstName')?></small>
                         <?php endif; ?>
-                        <input type="text" placeholder="Фамилия" name="FirstName" value=<?php echo old('FirstName') ?>>
+                        <input type="text" placeholder="Фамилия" name="FirstName" required
+                            value=<?php echo old('FirstName')?>>
                         <?php if(hasValidationError('SecondName')):?>
                         <small><?php getErrorMessage('SecondName') ?></small>
                         <?php endif; ?>
-                        <input type="text" placeholder="Имя" name="SecondName" value=<?php echo old('SecondName') ?>>
+                        <input type="text" placeholder="Имя" name="SecondName" required
+                            value=<?php echo old('SecondName') ?>>
                         <?php if(hasValidationError('ThirdName')):?>
                         <small><?php getErrorMessage('ThirdName')?></small>
                         <?php endif; ?>
-                        <input type="text" placeholder="Отчество" name="ThirdName" value=<?php echo old('ThirdName') ?>>
+                        <input type="text" placeholder="Отчество" name="ThirdName" required
+                            value=<?php echo old('ThirdName') ?>>
                         <?php if(hasValidationError('Telephones')):?>
                         <small><?php getErrorMessage('Telephones')?></small>
                         <?php endif; ?>
-                        <input type="tel" placeholder="Номер телефона" name="Telephones"
+                        <input type="tel" placeholder="Номер телефона" required name="Telephones"
                             value=<?php echo old('Telephones') ?>>
                         <?php if(hasValidationError('Email')):?>
                         <small><?php getErrorMessage('Email')?></small>
                         <?php endif; ?>
-                        <input type="email" placeholder="Email" name="Email" value=<?php echo old('Email') ?>>
+                        <input type="email" placeholder="Email" name="Email" required value=<?php echo old('Email') ?>>
                         <div class="buy-equipment-wrap-decor-form-input-list">
                             <input list="orders" name="infoOrder" placeholder="Выберите товар" required>
                             <datalist id="orders">

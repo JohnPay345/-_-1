@@ -1,4 +1,5 @@
 let categoryItemsArr = document.querySelector(".category-items-arr");
+let categoryItemsArrCtx = document.querySelectorAll(".category-items-arr-ctx");
 
 let buyEquipmentEntryWrap = document.querySelector(".buy-equipment-wrap");
 let buyEquipmentWrapDecorImg = document.querySelector(".buy-equipment-wrap-decor img");
@@ -28,8 +29,8 @@ categoryItemsArr.addEventListener('click', function (event) {
     buyEquipmentEntryWrap.classList.add('open');
     document.body.style.overflow = "hidden";
     buyEquipmentWrapDecorImg.src = event.target.src;
+    buyEquipmentWrapDecorImg.alt = event.target.alt;
     inputText.textContent = event.target.alt;
-    console.log(inputText);
 });
 
 
@@ -66,8 +67,17 @@ inputText.addEventListener('keydown', function (event) {
 
 Array.from(ordersList.options).forEach(elem => {
     elem.addEventListener('click', () => {
-        console.log('Hello');
         inputText.value = elem.value;
+        let altImg = elem.value;
+        //Меняем картинку при помощи сравнения alt у картинки и elem
+        if(buyEquipmentWrapDecorImg.alt != elem.value){
+            categoryItemsArrCtx.forEach(elem => {
+                if (elem.alt == altImg) {
+                    buyEquipmentWrapDecorImg.src = elem.src;
+                    buyEquipmentWrapDecorImg.alt = elem.alt;
+                }
+            });
+        }
     });
 });
 

@@ -1,6 +1,8 @@
 <?php
 //Работа с MySql DB и данными из формы
 require_once __DIR__ . "/helpers.php";
+require_once __DIR__ ."/config.php";
+
 
 //Получение данных из формы
 $firstName = $_POST["FirstName"] ?? null;
@@ -43,4 +45,9 @@ if(!empty($_SESSION['validation'])) {
     redirect('/main.php');
 }
 
-//Получение атрибута alt у img
+//Работа с DB orderprocecing
+$mysqli = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);;
+$query = "INSERT INTO `users` ('Фамилия', 'Имя', 'Отчество', 'Номер телефона', 'Email') VALUES('$firstName', '$secondName', '$thirdName', '$telephones', '$email')";
+$mysqli->query($query);
+$mysqli->close();
+redirect('/main.php');
