@@ -1,5 +1,5 @@
 <?php
-    require_once __DIR__ . "/incs/helpers.php";
+    require_once __DIR__ . "/incs/helpers.php"; 
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -54,7 +54,7 @@
                 <h3>Заказ оборудования</h3>
             </div>
             <div class="buy-equipment-wrap-decor">
-                <form method="POST" action="incs/formProcecing.php" class="buy-equipment-wrap-decor-form">
+                <form method="POST" action="/incs/formProcecing.php" class="buy-equipment-wrap-decor-form">
                     <div class="buy-equipment-wrap-decor-form-img">
                         <img src="images/Category-Item/catelog-item-1.png" alt="Картинка заказа">
                     </div>
