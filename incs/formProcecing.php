@@ -52,7 +52,7 @@ $dataOrder = date('d.m.Y');
 $numOrder = generate_string($permitted_chars);
 
 //Работа с DB orderprocecing
-$mysql = new mysqli('localhost', 'root', '', 'ordersprocecing');
+$mysql = new mysqli('localhost', 'root', 'root', 'ordersprocecing');
 mysqli_report(MYSQLI_REPORT_ERROR || MYSQLI_REPORT_STRICT);
 $mysql->query("INSERT INTO `users` (`Фамилия`, `Имя`, `Отчество`, `Номер телефона`, `Email`) VALUES('$firstName', '$secondName', '$thirdName', '$telephones', '$email')");
 $mysql->query("INSERT INTO `orders` (`Дата`, `Номер заказа`, `Название товара`) VALUES('$dataOrder', '$numOrder', '$infoOrder')");
